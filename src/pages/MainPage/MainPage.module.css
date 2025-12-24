@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: var(--space-xl);
+}
+
+.header {
+  width: 100vw;
+  font-size: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+}

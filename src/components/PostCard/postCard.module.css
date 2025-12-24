@@ -5,6 +5,11 @@
   box-shadow: var(--shadow-sm);
   transition: all 0.15s ease;
   cursor: pointer;
+  /* width: calc(50% - 80px); */
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 calc(50% - 12px);
+  justify-content: stretch;
 }
 
 .card:hover {
