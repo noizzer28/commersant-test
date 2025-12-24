@@ -1,0 +1,19 @@
+.reactions {
+  display: flex;
+  gap: var(--space-md);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+.reactions > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.like {
+  color: #16a34a;
+}
+
+.dislike {
+  color: #dc2626;
+}

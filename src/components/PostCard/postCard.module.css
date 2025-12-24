@@ -1,15 +1,14 @@
 .card {
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   box-shadow: var(--shadow-sm);
   transition: all 0.15s ease;
   cursor: pointer;
-  /* width: calc(50% - 80px); */
   display: flex;
   flex-direction: column;
-  flex: 0 1 calc(50% - 12px);
-  justify-content: stretch;
+  flex: 1 1 calc(40% - 1.5rem);
+  margin: 0 var(--space-sm) 0 var(--space-sm);
 }
 
 .card:hover {
@@ -18,33 +17,18 @@
 }
 
 .title {
-  font-size: 20px;
+  font-size: var(--font-base);
   font-weight: 600;
   margin-bottom: var(--space-sm);
 }
 
 .body {
-  font-size: 14px;
+  font-size: var(--font-sm);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-md);
-}
-
-.reactions {
-  display: flex;
-  gap: var(--space-md);
-  font-size: 13px;
-  color: var(--color-text-secondary);
-}
-.reactions > div {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.like {
-  color: #16a34a;
-}
-
-.dislike {
-  color: #dc2626;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }

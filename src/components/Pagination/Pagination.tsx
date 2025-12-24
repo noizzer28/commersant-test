@@ -5,9 +5,10 @@ type PaginationProps = {
   total: number;
   limit: number;
   onChange: (event: { selected: number }) => void;
+  currentPage: number;
 };
 
-function Pagination({ total, limit, onChange }: PaginationProps) {
+function Pagination({ total, limit, onChange, currentPage }: PaginationProps) {
   return (
     <ReactPaginate
       pageCount={Math.ceil(total / limit)}
@@ -24,6 +25,9 @@ function Pagination({ total, limit, onChange }: PaginationProps) {
       breakLinkClassName={styles.pageLink}
       activeClassName={styles.active}
       disabledClassName={styles.disabled}
+      nextLabel="Далее"
+      previousLabel="Назад"
+      forcePage={currentPage}
     />
   );
 }

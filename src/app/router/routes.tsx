@@ -2,6 +2,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainPage from '@/pages/MainPage/MainPage';
 import PostPage from '@/pages/PostPage/PostPage';
+import NotFound from '@/components/NotFound/NotFound';
 
 export const router = createBrowserRouter([
   {
@@ -9,7 +10,11 @@ export const router = createBrowserRouter([
     element: <MainPage />,
   },
   {
-    path: '/:postId',
+    path: '/post/:postId',
     element: <PostPage />,
+  },
+  {
+    path: '/*',
+    element: <NotFound />,
   },
 ]);
