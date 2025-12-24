@@ -4,3 +4,5 @@ React + TypeScript приложение для отображения списк
 Используются React Query для работы с API, React Router для навигации и CSS Modules для стилизации.
 
 Приложение доступно по адресу: https://noizzer28.github.io/commersant-test/
+
+Обратите внимание, некоторые браузеры блокируют доступ к этому api
