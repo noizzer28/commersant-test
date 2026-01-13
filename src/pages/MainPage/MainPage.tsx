@@ -5,15 +5,18 @@ import { getPosts } from '@/app/api/getPosts';
 import { PostsResponceDTO } from '@/types';
 import Pagination from '@/components/Pagination/Pagination';
 import { useState } from 'react';
+import Sorting from '@/components/Sorting/Sorting';
 
-const limit = 10;
+const limit = 8;
 
 function MainPage() {
   const [page, setPage] = useState(0);
+  const [sortBy, setSortBy] = useState('title');
+  const [order, setOrder] = useState<'asc' | 'desc'>('asc');
   //Для минимизации количества кода использую React Query
   const { data, isLoading, error } = useQuery<PostsResponceDTO>({
-    queryKey: ['posts', page],
-    queryFn: () => getPosts(page * limit, limit), //для более простого получения передаю page * на колво элементов на странице в качестве sikp
+    queryKey: ['posts', page, sortBy, order],
+    queryFn: () => getPosts(page * limit, limit, sortBy, order), //для более простого получения передаю page * на колво элементов на странице в качестве sikp
   });
 
   if (isLoading) return <div>Loading...</div>;
@@ -26,7 +29,21 @@ function MainPage() {
   return (
     <>
       <div className={styles.main}>
-        <header className={styles.header}>С наступающим Новым Годом!</header>
+        <header className={styles.header}>Проба пера Cursor AI</header>
+        <div className={styles.controls}>
+          <Sorting
+            sortBy={sortBy}
+            order={order}
+            onSortByChange={(value) => {
+              setSortBy(value);
+              setPage(0);
+            }}
+            onOrderChange={(value) => {
+              setOrder(value);
+              setPage(0);
+            }}
+          />
+        </div>
         {data && (
           <>
             <PostsTable posts={data.posts}></PostsTable>

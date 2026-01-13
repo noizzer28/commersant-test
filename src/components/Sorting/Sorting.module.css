@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.label {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}
+
+.select {
+  min-width: 180px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-size: var(--font-base);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+.select:focus {
+  outline: 2px solid var(--color-primary);
+}

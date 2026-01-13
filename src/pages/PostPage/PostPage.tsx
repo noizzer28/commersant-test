@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import img from '../../../public/images/tree.png';
 import styles from './postPage.module.css';
 import { useQuery } from '@tanstack/react-query';
 import { Post } from '@/types';
@@ -10,6 +9,7 @@ import { ArrowUDownLeft, Eye } from 'phosphor-react';
 function PostPage() {
   const { postId } = useParams<{ postId: string }>();
   const navigate = useNavigate();
+
   const { data, isLoading, error } = useQuery<Post>({
     queryKey: ['post', postId],
     queryFn: () => getPost(postId!), //пришлось прибегнуть к accertion type, не смогла обойти вероятность undefined
@@ -43,7 +43,7 @@ function PostPage() {
         )}
       </div>
 
-      <img className={styles.img} src={img} />
+      <img className={styles.img} src="/images/tree.png" />
     </div>
   );
 }
